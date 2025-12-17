@@ -1,0 +1,19 @@
+def decor1(fun):
+    def inner1():
+        print("decor 1 is decorating")
+        fun()
+        print("decor 1 decorated")
+    return inner1
+    
+def decor2(fun):
+    def inner2():
+        print("decor 2 is decorating")
+        fun()
+        print("decor 2 is decorated")
+    return inner2
+@decor2
+@decor1
+def logg():
+    print("it is logger function")
+    
+logg()
